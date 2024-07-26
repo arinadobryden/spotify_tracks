@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Top Tracks</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <h1>Spotify Top Tracks</h1>
+            <form id="search-form">
+                <input type="text" id="artist" name="artist" placeholder="Artist Name" required>
+                <input type="text" id="country" name="country" placeholder="Country (optional)">
+                <button type="submit">Search</button>
+            </form>
+            <h2>Top Tracks</h2>
+            <div class="track-list" id="track-list"></div>
+        </div>
+        <button id="chat-toggle-button">Toggle Chat</button>
+        <div id="chat-container" class="chat-popup">
+            <div class="chat-header">
+                <h2>Chat</h2>
+                <button id="chat-close-button">&times;</button>
+            </div>
+            <ul id="messages"></ul>
+            <input id="message-input" autocomplete="off" placeholder="Type a message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
