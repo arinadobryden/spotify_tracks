@@ -1,7 +1,6 @@
-from flask import Flask, request, jsonify, send_from_directory, redirect, url_for
+from flask import Flask, request, jsonify, send_from_directory, redirect
 from flask_socketio import SocketIO, emit
 import requests
-import os
 import logging
 
 app = Flask(__name__, static_url_path='/static')
@@ -10,7 +9,7 @@ socketio = SocketIO(app)
 SPOTIFY_API_URL = 'https://api.spotify.com/v1'
 CLIENT_ID = 'dac80e6b645542e0bcad78ba22b520c3'
 CLIENT_SECRET = '5532396c309048ed92da1f76a6503539'
-REDIRECT_URI = 'https://example.org/callback'  # Update this to your actual callback URL
+REDIRECT_URI = 'https://example.org/callback'  
     
 logging.basicConfig(level=logging.DEBUG)
 
@@ -44,9 +43,8 @@ def top_tracks():
         return redirect(REDIRECT_URI)
 
     if not country or country.strip() == '':
-        # Fetch user's country based on IP (example implementation)
         country_response = requests.get('http://ip-api.com/json')
-        country = country_response.json().get('countryCode', 'US')
+        country = country_response.json().get('countryCode', 'UK')
         logging.debug(f"Detected country: {country}")
 
     headers = {
@@ -98,8 +96,6 @@ def top_tracks():
         logging.error("No tracks found")
         return redirect(REDIRECT_URI)
 
-    # Store the search info (example using a list)
-    # In production, use a database
     with open('search_log.txt', 'a') as log_file:
         log_file.write(f'{artist_name},{country},{len(tracks)}\n')
 

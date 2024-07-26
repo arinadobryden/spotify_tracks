@@ -1,6 +1,5 @@
 const socket = io();
 
-// Function to generate a random username
 function generateUsername() {
     const adjectives = ["Cool", "Happy", "Smart", "Fast", "Brave"];
     const animals = ["Lion", "Tiger", "Bear", "Eagle", "Shark"];
@@ -9,10 +8,8 @@ function generateUsername() {
     return `${adjective}${animal}${Math.floor(Math.random() * 1000)}`;
 }
 
-// Assign a random username to the user
 const username = generateUsername();
 
-// Handle chatbox visibility
 const chatToggleButton = document.getElementById('chat-toggle-button');
 const chatContainer = document.getElementById('chat-container');
 const chatCloseButton = document.getElementById('chat-close-button');
