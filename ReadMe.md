@@ -10,26 +10,28 @@ This project is an online service that allows users to select an artist and a co
 
 ## Installation and setup
 - Clone the repository
-'''
+```
 git clone https://github.com/yourusername/spotify-top-tracks.git
 cd spotify-top-tracks
-'''
+```
 - Create a VE and install dependencies
-'''
+```
 python -m venv venv
 `venv\Scripts\activate`
 pip install -r requirements.txt
-'''
+```
 - Setup Spotify API Credentials
-'''
+```
 CLIENT_ID=your_spotify_client_id
 CLIENT_SECRET=your_spotify_client_secret
 REDIRECT_URI=https://example.org/callback
-'''
+```
 - Run the application
-'''
+
+
+```
 python app.py
-'''
+```
 - Open browser and navigate to 'http://localhost:5000'
 
 
