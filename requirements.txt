@@ -1,0 +1,6 @@
+##python dependencies
+Flask==2.1.1
+Flask-SocketIO==5.1.1
+requests==2.27.1
+
+
